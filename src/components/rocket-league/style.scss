@@ -1,0 +1,92 @@
+%bottom-left-rounded {
+    border-bottom-left-radius: 7px;
+}
+
+%bottom-right-rounded {
+    border-bottom-right-radius: 7px;
+}
+
+%top-left-rounded {
+    border-top-left-radius: 7px;
+}
+
+%top-right-rounded {
+    border-top-right-radius: 7px;
+}
+
+%top-rounded {
+	@extend %top-left-rounded !optional;
+	@extend %top-right-rounded !optional;
+}
+
+%bottom-rounded {
+    @extend %bottom-left-rounded !optional;
+    @extend %bottom-right-rounded !optional;
+}
+
+%left-rounded {
+    @extend %bottom-left-rounded !optional;
+    @extend %top-left-rounded !optional;
+}
+
+%right-rounded {
+    @extend %bottom-right-rounded !optional;
+    @extend %top-right-rounded !optional;
+}
+
+%rounded {
+    @extend %left-rounded !optional;
+    @extend %right-rounded !optional;
+}
+
+%glowing {
+    color: #ffca52 !important;
+    box-shadow: 0 0 5px 5px #ffca52;
+}
+
+%stretched-left {
+    transform: scale(0.83, 1);
+	transform-origin: left;
+	width: calc(100% / 0.83);
+}
+
+%stretched-center {
+    transform: scale(0.83, 1);
+	transform-origin: center;
+	width: calc(100% / 0.83);
+}
+
+%scrollbar {
+	& {
+		&::-webkit-scrollbar {
+			height: 10px;
+			width: 10px;
+			display: contents;
+		}
+	
+		&::-webkit-scrollbar-track {
+			background: transparent;
+		}
+	
+		&::-webkit-scrollbar-thumb {
+			background: #00000020;
+			border-radius: 10px;
+		}
+	
+		&::-webkit-scrollbar-thumb:hover {
+			background: #00000040;
+		}
+		
+		&::-webkit-scrollbar-corner {
+			background: transparent;
+		}
+	}
+}
+
+%no-scrollbar {
+	& {
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+}
